@@ -5,10 +5,16 @@ import json
 from simulator import simulate_pid, pole_placement_pid
 from llm_agent import get_pid_suggestion, interpret_results
 from dotenv import load_dotenv
-
+import os
 load_dotenv()
 
 st.title("LLM Destekli PID Tuner")
+user_api_key = st.text_input("OpenAI API Key", type="password", placeholder="sk-...")
+if not user_api_key:
+    st.warning("Devam etmek için OpenAI API key'inizi girin.")
+    st.stop()
+
+os.environ["OPENAI_API_KEY"] = user_api_key
 st.caption("Transfer fonksiyonu gir → PID hesapla → Simülasyonu gör → LLM yorumlasın")
 
 st.subheader("Sistem transfer fonksiyonu G(s)")
