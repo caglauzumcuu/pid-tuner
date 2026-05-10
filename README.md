@@ -5,7 +5,7 @@ Enter a transfer function, calculate PID parameters using Pole Placement, simula
 ## Features
 - Automatic PID calculation using Pole Placement method
 - Step response and control signal plots
-- Turkish/English interpretation powered by GPT-4o
+- AI-powered interpretation in Turkish using GPT-4o
 
 ## Usage
 1. Enter numerator and denominator coefficients of your transfer function
